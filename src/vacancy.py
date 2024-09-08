@@ -13,7 +13,16 @@ class Vacancy:
     requirement: str
     responsibility: str
 
-    def __init__(self, name: str, alternate_url: str, salary_from: str, salary_to: str, area_name: str, requirement: str, responsibility: str) -> None:
+    def __init__(
+        self,
+        name: str,
+        alternate_url: str,
+        salary_from: str,
+        salary_to: str,
+        area_name: str,
+        requirement: str,
+        responsibility: str,
+    ) -> None:
         """Конструктор класса"""
 
         self.name = name
@@ -36,7 +45,7 @@ class Vacancy:
             f"{self.responsibility}\n"
         )
 
-    def __lt__(self, other: 'Vacancy') -> bool:
+    def __lt__(self, other: "Vacancy") -> bool:
         """Метод сравнения от большего к меньшему"""
 
         return self.salary_from < other.salary_from
@@ -50,8 +59,8 @@ class Vacancy:
         return cls(
             vacancy_data["name"],
             vacancy_data["alternate_url"],
-            salary.get("from", '0') if salary.get("from") else 0,
-            salary.get("to", '0') if salary.get("to") else 0,
+            salary.get("from", "0") if salary.get("from") else 0,
+            salary.get("to", "0") if salary.get("to") else 0,
             vacancy_data["area"]["name"],
             vacancy_data["snippet"]["requirement"],
             vacancy_data["snippet"]["responsibility"],

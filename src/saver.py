@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+from typing import Any
+
 
 class Saver(ABC):
     """Абстрактный класс для записи в файл"""
@@ -8,7 +10,7 @@ class Saver(ABC):
         self.filename = filename
 
     @abstractmethod
-    def write_data(self, vacancies: list) -> None:
+    def write_data(self, vacancies: str) -> Any:
         """Абстрактный метод для записи данных"""
         pass
 
