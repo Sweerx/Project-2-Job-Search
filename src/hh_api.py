@@ -5,7 +5,7 @@ from src.get_vacancies_api import GetVacanciesAPI
 
 
 class HeadHunterAPI(GetVacanciesAPI):
-    """ Класс для подключения к hh.ru """
+    """Класс для подключения к hh.ru"""
 
     __connection: bool
 
@@ -13,7 +13,6 @@ class HeadHunterAPI(GetVacanciesAPI):
         self.url = "https://api.hh.ru/vacancies"
         self.headers = {"User-Agent": "HH-User-Agent"}
         self.params = {"text": "", "per_page": "", "only_with_salary": True}
-
 
     def get_response(self, keyword, per_page) -> Response:
         self.params["text"] = keyword

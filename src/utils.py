@@ -6,7 +6,7 @@ from src.vacancy import Vacancy
 
 
 def user_choice_json():
-    """ Функция для работы с пользователем, записи в json-файл """
+    """Функция для работы с пользователем, записи в json-файл"""
 
     keyword = input("Какую профессию ищите?\n").lower()
     per_page = int(input("Сколько профессии вывести?\n"))
@@ -29,7 +29,7 @@ def user_choice_json():
 
 
 def user_choice_txt():
-    """ Функция для работы с пользователем, записи в txt-файл """
+    """Функция для работы с пользователем, записи в txt-файл"""
 
     keyword = input("Какую профессию ищите?\n").lower()
     per_page = int(input("Сколько профессии вывести?\n"))

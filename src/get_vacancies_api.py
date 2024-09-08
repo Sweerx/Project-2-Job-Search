@@ -8,7 +8,6 @@ class GetVacanciesAPI(ABC):
     def get_response(self, keyword, per_page):
         pass
 
-
     @abstractmethod
     def get_vacancies(self, keyword, per_page):
         pass
