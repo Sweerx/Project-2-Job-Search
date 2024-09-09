@@ -1,4 +1,5 @@
 import json
+from typing import Any
 
 from src.saver import Saver
 
@@ -6,12 +7,12 @@ from src.saver import Saver
 class JSONSaver(Saver):
     """Класс для записи в json-файл"""
 
-    def __init__(self, filename):
+    def __init__(self, filename: str) -> None:
         """Конструктор класса"""
 
         super().__init__(filename)
 
-    def write_data(self, vacancies):
+    def write_data(self, vacancies: str) -> None:
         """Запись данных в json"""
 
         data = self.get_data()
@@ -20,7 +21,7 @@ class JSONSaver(Saver):
         with open(self.filename, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
 
-    def get_data(self):
+    def get_data(self) -> Any:
         """Получение данных json"""
 
         try:
@@ -28,7 +29,7 @@ class JSONSaver(Saver):
         except FileNotFoundError:
             return []
 
-    def del_data(self):
+    def del_data(self) -> None:
         """Удаление данных из файла"""
 
         with open(self.filename, "w", encoding="utf-8") as file:

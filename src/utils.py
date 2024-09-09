@@ -5,7 +5,7 @@ from src.txt_saver import TXTSaver
 from src.vacancy import Vacancy
 
 
-def user_choice_json():
+def user_choice_json() -> None:
     """Функция для работы с пользователем, записи в json-файл"""
 
     keyword = input("Какую профессию ищите?\n").lower()
@@ -21,14 +21,14 @@ def user_choice_json():
         print(i)
 
     vacancies = [vacancy.to_dict() for vacancy in vacancies]
-    saver = JSONSaver(VACANCIES_PATH_JSON)
+    saver = JSONSaver(str(VACANCIES_PATH_JSON))
 
     saver.write_data(vacancies)
     saver.get_data()
     print("Данные записаны в json-файл")
 
 
-def user_choice_txt():
+def user_choice_txt() -> None:
     """Функция для работы с пользователем, записи в txt-файл"""
 
     keyword = input("Какую профессию ищите?\n").lower()
@@ -43,7 +43,7 @@ def user_choice_txt():
         print(i)
 
     vacancies = "\n".join(str(vacancy) for vacancy in vacancies)
-    saver = TXTSaver(VACANCIES_PATH_TXT)
+    saver = TXTSaver(str(VACANCIES_PATH_TXT))
     saver.write_data(vacancies)
     saver.get_data()
     print("Данные записаны в txt-файл")
